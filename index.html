@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Personal - Estudiante de Informática</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Estilos CSS personalizados incorporados -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-slate-950">
+
+    <!-- ENCABEZADO / NAVBAR -->
+    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+
+                <!-- Logo / Marca -->
+                <a href="#inicio" class="flex items-center gap-3 group">
+                    <div
+                        class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center font-bold text-slate-950 text-xl shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+                        &lt;/&gt;
+                    </div>
+                    <div>
+                        <span class="font-bold text-lg tracking-tight text-white block leading-none">Jose Manuel<span
+                                class="text-cyan-400">.dev</span></span>
+                        <span class="text-xs text-slate-400 font-mono">Estudiante de Informática</span>
+                    </div>
+                </a>
+
+                <!-- Menú de Navegación Escritorio -->
+                <nav
+                    class="hidden md:flex items-center gap-1 bg-slate-900/80 p-1.5 rounded-full border border-slate-800 backdrop-blur-md">
+                    <a href="#inicio"
+                        class="px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:text-cyan-400 text-slate-300 hover:bg-slate-800/50">Inicio</a>
+                    <a href="#sobre-mi"
+                        class="px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:text-cyan-400 text-slate-300 hover:bg-slate-800/50">Sobre
+                        mí</a>
+                    <a href="#portafolio"
+                        class="px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:text-cyan-400 text-slate-300 hover:bg-slate-800/50">Mi
+                        portafolio</a>
+                    <a href="#galeria"
+                        class="px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:text-cyan-400 text-slate-300 hover:bg-slate-800/50">Galería</a>
+                    <a href="#contacto"
+                        class="px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:text-cyan-400 text-slate-300 hover:bg-slate-800/50">Contáctame</a>
+                </nav>
+
+                <!-- Iconos de Redes Sociales (Solicitados: TikTok, WhatsApp, Instagram, Facebook) -->
+                <div class="hidden lg:flex items-center gap-3">
+                    <a href="https://tiktok.com" target="_blank" aria-label="TikTok"
+                        class="w-9 h-9 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-500/50 hover:bg-slate-800 transition-all">
+                        <i data-lucide="video" class="w-4 h-4"></i>
+                    </a>
+                    <a href="https://wa.me/123456789" target="_blank" aria-label="WhatsApp"
+                        class="w-9 h-9 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-green-400 hover:border-green-500/50 hover:bg-slate-800 transition-all">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i>
+                    </a>
+                    <a href="https://www.instagram.com/jxsezkp/" target="_blank" aria-label="Instagram"
+                        class="w-9 h-9 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-pink-400 hover:border-pink-500/50 hover:bg-slate-800 transition-all">
+                        <i data-lucide="instagram" class="w-4 h-4"></i>
+                    </a>
+                    <a href="https://facebook.com" target="_blank" aria-label="Facebook"
+                        class="w-9 h-9 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-blue-400 hover:border-blue-500/50 hover:bg-slate-800 transition-all">
+                        <i data-lucide="facebook" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Botón Menú Móvil -->
+                <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white p-2">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menú Desplegable Móvil -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-slate-900/95 border-b border-slate-800 px-4 pt-2 pb-6 backdrop-blur-lg">
+            <div class="flex flex-col gap-3 pt-2">
+                <a href="#inicio"
+                    class="px-4 py-2 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition-all">Inicio</a>
+                <a href="#sobre-mi"
+                    class="px-4 py-2 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition-all">Sobre
+                    mí</a>
+                <a href="#portafolio"
+                    class="px-4 py-2 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition-all">Mi
+                    portafolio</a>
+                <a href="#galeria"
+                    class="px-4 py-2 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition-all">Galería</a>
+                <a href="#contacto"
+                    class="px-4 py-2 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition-all">Contáctame</a>
+            </div>
+
+            <!-- Redes Sociales Móvil -->
+            <div class="flex items-center gap-4 mt-6 pt-4 border-t border-slate-800 justify-center">
+                <a href="https://tiktok.com" class="p-2 rounded-full bg-slate-800 text-slate-300 hover:text-cyan-400"><i
+                        data-lucide="video" class="w-5 h-5"></i></a>
+                <a href="https://wa.me/123456789"
+                    class="p-2 rounded-full bg-slate-800 text-slate-300 hover:text-green-400"><i
+                        data-lucide="message-circle" class="w-5 h-5"></i></a>
+                <a href="https://instagram.com"
+                    class="p-2 rounded-full bg-slate-800 text-slate-300 hover:text-pink-400"><i data-lucide="instagram"
+                        class="w-5 h-5"></i></a>
+                <a href="https://facebook.com"
+                    class="p-2 rounded-full bg-slate-800 text-slate-300 hover:text-blue-400"><i data-lucide="facebook"
+                        class="w-5 h-5"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECCIÓN DE INICIO (HERO & NEWS) -->
+    <section id="inicio" class="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
+        <!-- Efectos de Fondo -->
+        <div
+            class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none">
+        </div>
+        <div
+            class="absolute top-1/3 right-10 w-[400px] h-[400px] bg-blue-600/10 rounded-full blur-[100px] pointer-events-none">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+
+                <!-- Columna Texto Hero -->
+                <div class="lg:col-span-7 text-center lg:text-left">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-800/50 text-cyan-400 text-xs font-mono mb-6">
+                        <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                        Disponible para proyectos & prácticas
+                    </div>
+
+                    <h1
+                        class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight mb-6">
+                        Construyendo el futuro digital con <span class="gradient-text">código & pasión</span>
+                    </h1>
+
+                    <p class="text-slate-400 text-lg sm:text-xl mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Hola, soy un estudiante apasionado por la **Ingeniería Informática**, enfocado en desarrollo
+                        Web, Sistemas Distribuidos y Soluciones de Software de alto impacto.
+                    </p>
+
+                    <!-- Call to Action -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4">
+                        <a href="#portafolio"
+                            class="px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold shadow-lg shadow-cyan-500/25 transition-all duration-300 transform hover:-translate-y-0.5 flex items-center gap-2">
+                            Ver Portafolio <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#contacto"
+                            class="px-8 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-medium border border-slate-800 transition-all duration-300 flex items-center gap-2">
+                            Contactar <i data-lucide="mail" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+
+                    <!-- Métricas Rápidas -->
+                    <div class="grid grid-cols-3 gap-4 mt-12 pt-8 border-t border-slate-800/80">
+                        <div>
+                            <span class="text-3xl font-bold text-white font-mono">2.º</span>
+                            <p class="text-xs text-slate-400 mt-1">Ciclo </p>
+                        </div>
+                        <div>
+                            <span class="text-3xl font-bold text-cyan-400 font-mono">10+</span>
+                            <p class="text-xs text-slate-400 mt-1">Proyectos Creados</p>
+                        </div>
+                        <div>
+                            <span class="text-3xl font-bold text-blue-400 font-mono">100%</span>
+                            <p class="text-xs text-slate-400 mt-1">Compromiso</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Simulación Terminal / IDE -->
+                <div class="lg:col-span-5">
+                    <div class="glass rounded-2xl overflow-hidden shadow-2xl border border-slate-800/80">
+                        <div
+                            class="bg-slate-900/90 px-4 py-3 border-b border-slate-800 flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+                                <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+                                <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
+                            </div>
+                            <span class="text-xs font-mono text-slate-400">perfil.json</span>
+                        </div>
+                        <div class="p-6 code-font text-sm leading-relaxed overflow-x-auto">
+                            <pre class="text-slate-300">
+{
+  <span class="text-cyan-400">"estudiante"</span>: <span class="text-amber-300">"Jose Manuel Olaechea Yauyo"</span>,
+  <span class="text-cyan-400">"carrera"</span>: <span class="text-amber-300">"Desarrollo de sistemas de la informacion"</span>,
+  <span class="text-cyan-400">"enfoque"</span>: [
+    <span class="text-amber-300">"Arquitectura de frontend"</span>,
+    <span class="text-amber-300">"Sistemas de backend"</span>,
+    <span class="text-amber-300">"Programación"</span>
+  ],
+  <span class="text-cyan-400">"tecnologias"</span>: [
+    <span class="text-emerald-400">"JavaScript"</span>, <span class="text-emerald-400">"Python"</span>,
+    <span class="text-emerald-400">"Tailwind"</span>, <span class="text-emerald-400">"React"</span>, <span class="text-emerald-400">"Git"</span>
+  ],
+  <span class="text-cyan-400">"estado"</span>: <span class="text-cyan-300">"Aprendiendo constantemente 🚀"</span>
+}
+</pre>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- SECCIÓN DE NOTICIAS DESTACADAS Y TECNOLOGÍA -->
+            <div class="mt-28">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-8">
+                    <div>
+                        <span class="text-cyan-400 font-mono text-sm tracking-wider uppercase">Novedades</span>
+                        <h2 class="text-2xl sm:text-3xl font-bold text-white mt-1">Noticias & Tendencias Tech</h2>
+                    </div>
+                    <p class="text-slate-400 text-sm mt-2 md:mt-0">Lo último sobre lo que estoy investigando y
+                        aprendiendo</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Noticia 1 -->
+                    <article class="glass p-6 rounded-2xl hover:border-cyan-500/40 transition-all duration-300 group">
+                        <div class="flex items-center gap-3 text-xs text-slate-400 mb-3">
+                            <span class="px-2.5 py-1 rounded-md bg-cyan-950 text-cyan-400 font-mono">IA & ML</span>
+                            <span>Hace 2 días</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-white group-hover:text-cyan-400 transition-colors mb-2">
+                            Avances en Modelos Multimodales de Inteligencia Artificial
+                        </h3>
+                        <p class="text-slate-400 text-sm line-clamp-3">
+                            Análisis sobre la integración de visiones por computadora y procesamiento de lenguaje
+                            natural en aplicaciones modernas.
+                        </p>
+                    </article>
+
+                    <!-- Noticia 2 -->
+                    <article class="glass p-6 rounded-2xl hover:border-cyan-500/40 transition-all duration-300 group">
+                        <div class="flex items-center gap-3 text-xs text-slate-400 mb-3">
+                            <span class="px-2.5 py-1 rounded-md bg-blue-950 text-blue-400 font-mono">Web Dev</span>
+                            <span>Esta semana</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-white group-hover:text-cyan-400 transition-colors mb-2">
+                            El auge de los Web Components y CSS de última generación
+                        </h3>
+                        <p class="text-slate-400 text-sm line-clamp-3">
+                            Cómo las nuevas especificaciones del navegador están simplificando el desarrollo frontend
+                            reduciendo la dependencia a frameworks.
+                        </p>
+                    </article>
+
+                    <!-- Noticia 3 -->
+                    <article class="glass p-6 rounded-2xl hover:border-cyan-500/40 transition-all duration-300 group">
+                        <div class="flex items-center gap-3 text-xs text-slate-400 mb-3">
+                            <span
+                                class="px-2.5 py-1 rounded-md bg-purple-950 text-purple-400 font-mono">Académico</span>
+                            <span>Mes actual</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-white group-hover:text-cyan-400 transition-colors mb-2">
+                            Proyecto Universitario: Algoritmos de optimización
+                        </h3>
+                        <p class="text-slate-400 text-sm line-clamp-3">
+                            Implementación de estructuras de datos avanzadas para resolver problemas complejos de
+                            enrutamiento y grafos.
+                        </p>
+                    </article>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECCIÓN SOBRE MÍ -->
+    <section id="sobre-mi" class="py-24 bg-slate-900/50 border-y border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+
+                <!-- Foto / Ilustración de Perfil -->
+                <div class="lg:col-span-5 relative">
+                    <div
+                        class="relative w-full aspect-square max-w-md mx-auto rounded-3xl overflow-hidden border-2 border-slate-800 shadow-2xl">
+                        <img src="fotomia.jpeg"
+                            alt="Jose Manuel - Estudiante" class="w-full h-full object-cover">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detalle Biográfico y Skills -->
+                <div class="lg:col-span-7">
+                    <span class="text-cyan-400 font-mono text-sm tracking-wider uppercase">Trayectoria &
+                        Habilidades</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 mb-6">
+                        Apasionado por transformar lógica en experiencias interactivas
+                    </h2>
+
+                    <p class="text-slate-300 leading-relaxed mb-6">
+                        Como estudiante de Informática, combino los fundamentos teóricos teóricos del software con
+                        proyectos prácticos. Me fascina resolver retos lógicos, optimizar la experiencia de usuario y
+                        escribir código limpio y estructurado.
+                    </p>
+
+                    <!-- Habilidades / Skills Progress -->
+                    <div class="space-y-4 my-8">
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="font-mono text-slate-200">HTML5 / CSS3 / JavaScript</span>
+                                <span class="font-mono text-cyan-400">90%</span>
+                            </div>
+                            <div class="w-full h-2 rounded-full bg-slate-800 overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full"
+                                    style="width: 90%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="font-mono text-slate-200">React & Frameworks Web</span>
+                                <span class="font-mono text-cyan-400">75%</span>
+                            </div>
+                            <div class="w-full h-2 rounded-full bg-slate-800 overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full"
+                                    style="width: 75%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="font-mono text-slate-200">Python & Algoritmos</span>
+                                <span class="font-mono text-cyan-400">80%</span>
+                            </div>
+                            <div class="w-full h-2 rounded-full bg-slate-800 overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full"
+                                    style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN PORTAFOLIO -->
+    <section id="portafolio" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-cyan-400 font-mono text-sm tracking-wider uppercase">Mis Proyectos</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Trabajos Destacados</h2>
+            </div>
+
+            <!-- Proyectos Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Proyecto 1 -->
+                <div
+                    class="glass rounded-2xl overflow-hidden border border-slate-800 hover:border-cyan-500/50 transition-all duration-300 group">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
+                            alt="Dashboard Académico"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-mono text-cyan-400 mb-2 block">Web App</span>
+                        <h3 class="text-xl font-bold text-white mb-2">Dashboard de Gestión Escolar</h3>
+                        <p class="text-slate-400 text-sm mb-4">Plataforma web interactiva para control de asistencia y
+                            calificaciones estudiantiles.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-2.5 py-1 text-xs font-mono bg-slate-800 text-slate-300 rounded">HTML/JS</span>
+                            <span
+                                class="px-2.5 py-1 text-xs font-mono bg-slate-800 text-slate-300 rounded">Tailwind</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2 -->
+                <div
+                    class="glass rounded-2xl overflow-hidden border border-slate-800 hover:border-cyan-500/50 transition-all duration-300 group">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80"
+                            alt="Algoritmo IA"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-mono text-cyan-400 mb-2 block">Inteligencia Artificial</span>
+                        <h3 class="text-xl font-bold text-white mb-2">Clasificador de Imágenes</h3>
+                        <p class="text-slate-400 text-sm mb-4">Modelo entrenado para el reconocimiento automático de
+                            objetos mediante visión computacional.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-2.5 py-1 text-xs font-mono bg-slate-800 text-slate-300 rounded">Python</span>
+                            <span
+                                class="px-2.5 py-1 text-xs font-mono bg-slate-800 text-slate-300 rounded">TensorFlow</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 3 -->
+                <div
+                    class="glass rounded-2xl overflow-hidden border border-slate-800 hover:border-cyan-500/50 transition-all duration-300 group">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80"
+                            alt="Ciberseguridad"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-mono text-cyan-400 mb-2 block">Seguridad</span>
+                        <h3 class="text-xl font-bold text-white mb-2">Simulador de Encriptación</h3>
+                        <p class="text-slate-400 text-sm mb-4">Herramienta interactiva para visualizar cómo funcionan
+                            los algoritmos de cifrado simétrico.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1 text-xs font-mono bg-slate-800 text-slate-300 rounded">C++</span>
+                            <span
+                                class="px-2.5 py-1 text-xs font-mono bg-slate-800 text-slate-300 rounded">Criptografía</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN GALERÍA DE FOTOS -->
+    <section id="galeria" class="py-24 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-cyan-400 font-mono text-sm tracking-wider uppercase">Momentos & Eventos</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Galería Académica</h2>
+            </div>
+
+            <!-- Grid de Fotos -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="relative group aspect-square rounded-2xl overflow-hidden border border-slate-800">
+                    <img src="https://online.anahuac.mx/images/i_sistemas_comp_anahuac_online_thumb_736w.webp"
+                        alt="Participación"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div
+                        class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4 text-center">
+                        <span class="text-sm font-medium text-white">Participación </span>
+                    </div>
+                </div>
+
+                <div class="relative group aspect-square rounded-2xl overflow-hidden border border-slate-800">
+                    <img src="participacion.jpeg"
+                        alt="Trabajo en Equipo"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div
+                        class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4 text-center">
+                        <span class="text-sm font-medium text-white">Sesión de Programación en Pareja</span>
+                    </div>
+                </div>
+
+                <div class="relative group aspect-square rounded-2xl overflow-hidden border border-slate-800">
+                    <img src="https://www.sise.edu.pe/uploads/Foto_01_50a87810b1.jpg"
+                        alt="Conferencia Tech"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div
+                        class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4 text-center">
+                        <span class="text-sm font-medium text-white">Conferencia de Tecnología</span>
+                    </div>
+                </div>
+
+                <div class="relative group aspect-square rounded-2xl overflow-hidden border border-slate-800">
+                    <img src="vida.uni.jpeg"
+                        alt="Campus Universitario"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div
+                        class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4 text-center">
+                        <span class="text-sm font-medium text-white">Vida Universitaria</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CONTÁCTAME -->
+    <section id="contacto" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12">
+
+                <div class="lg:col-span-5">
+                    <span class="text-cyan-400 font-mono text-sm tracking-wider uppercase">Contacto</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 mb-6">¿Tienes una propuesta o
+                        proyecto?</h2>
+                    <p class="text-slate-400 mb-8 leading-relaxed">
+                        Estoy abierto a colaborar en proyectos open-source, prácticas profesionales o resolver cualquier
+                        duda técnica.
+                    </p>
+
+                    <!-- Info Directa -->
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-cyan-400">
+                                <i data-lucide="mail" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-500 block">Correo Electrónico</span>
+                                <span class="text-slate-200 font-mono text-sm">josemanuelolaecheayauyo@gmail.com</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-green-400">
+                                <i data-lucide="message-circle" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-500 block">WhatsApp</span>
+                                <span class="text-slate-200 font-mono text-sm">+51 946 590 761</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulario -->
+                <div class="lg:col-span-7">
+                    <form id="contact-form" class="glass p-8 rounded-2xl border border-slate-800 space-y-6">
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-300 mb-2">Nombre</label>
+                                <input type="text" required
+                                    class="w-full bg-slate-900/90 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-500 transition-colors"
+                                    placeholder="Tu nombre">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-300 mb-2">Correo</label>
+                                <input type="email" required
+                                    class="w-full bg-slate-900/90 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-500 transition-colors"
+                                    placeholder="tu@correo.com">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-slate-300 mb-2">Asunto</label>
+                            <input type="text" required
+                                class="w-full bg-slate-900/90 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-500 transition-colors"
+                                placeholder="Propuesta de proyecto / Consulta">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-slate-300 mb-2">Mensaje</label>
+                            <textarea rows="4" required
+                                class="w-full bg-slate-900/90 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-500 transition-colors"
+                                placeholder="Escribe tu mensaje aquí..."></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold rounded-xl shadow-lg transition-all">
+                            Enviar Mensaje
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA (FOOTER) -->
+    <footer class="border-t border-slate-800/80 bg-slate-950 py-8">
+        <div class="max-w-7xl mx-auto px-4 text-center text-slate-500 text-sm">
+            <p>© 2026 Alexander.dev - Todos los derechos reservados. Diseñado para Estudiante de Informática.</p>
+        </div>
+    </footer>
+
+    <!-- Script JS -->
+    <script src="script.js"></script>
+    <script>
+        // Inicializar Iconos Lucide
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
